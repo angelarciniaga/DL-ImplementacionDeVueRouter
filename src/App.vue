@@ -20,14 +20,17 @@
                     </li>
                     <li class="nav-item" role="presentation">
                       <!-- REEMPLAZAR CON ELEMENTO ROUTER LINK A RUTA ESTÁTICA -->
-                      <router-link to="/UltimoPost">Último Post</router-link> |
+                      <router-link to="/UltimoPost/1">Último Post</router-link> |
                     </li>
                 </ul>
         </div>
         </div>
     </nav>
-    <!-- ROUTER VIEW QUE CARGARÁ LAS VISTAS (INICIO, SOBRE MÍ, CONTACTO, ETC.) -->
-    <router-view></router-view>
+    <!-- TRANSICION -->
+    <transition name="slide-fade">
+      <!-- ROUTER VIEW QUE CARGARÁ LAS VISTAS (INICIO, SOBRE MÍ, CONTACTO, ETC.) -->
+      <router-view></router-view>
+    </transition>
   </div>
   
 </template>
@@ -40,5 +43,14 @@ export default {
 </script>
 
 <style scoped>
-
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translate(10px);
+  opacity: 0;
+}
 </style>

@@ -55,3 +55,13 @@
         </footer>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'UltimoPost'
+}
+</script>
+
+<style>
+
+</style>
